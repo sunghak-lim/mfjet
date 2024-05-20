@@ -1,12 +1,17 @@
 # mfjet
 
-MFJet is a Python package that computes Minkowski Functionals 
+`mfjet` is a Python package that computes Minkowski Functionals.
 
 
 Installation
 ------------
 
-    pip install "
+```
+pip install https://github.com/sunghak-lim/mfjet.git
+```
 
-Contacts
---------
+Citing mfjet
+------------
+
+References
+----------
