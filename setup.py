@@ -1,14 +1,17 @@
 from os import path
 from setuptools import find_packages, setup
-from mfjet.version import VERSION
 
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
+version_file = os.path.join(path.abspath(os.path.dirname(__file__)), 'mfjet', 'version.py')
+with open(version_file, 'r') as file:
+    exec(file.read())
+
 setup(
     name="mfjet",
-    version=VERSION,
+    version=__version__,
     description="Minkowski functionals in jet physics",
     long_description=long_description,
     long_description_content_type='text/markdown',
