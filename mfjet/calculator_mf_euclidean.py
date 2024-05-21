@@ -11,7 +11,8 @@ class MFEuclideanCalculator:
 
     def calc_mfs(self, coords, r, quad_segs=None):
         """
-        Create shapely Geometry object representing the Minkowski sum of points and a disk with radius r
+        Create shapely Geometry object representing 
+        the Minkowski sum of points and a disk with radius r.
         This dilation function is for Steiner-type formula for Euclidean distance.
 
         Parameters
@@ -20,7 +21,8 @@ class MFEuclideanCalculator:
         r         : float or array_like
             Specifies the circle radius in the Minkowski sum.
         quad_segs : int, default 8
-            Specifies the number of linear segments in a quarter circle in the approximation of circular arcs.
+            Specifies the number of linear segments in a quarter circle in 
+            the approximation of circular arcs.
 
         Returns
         -------
@@ -54,7 +56,11 @@ class MFEuclideanCalculator:
         list_output.append(minkowski_funcs.calc_mfs(geom))
 
         for dr in arr_dr:
-            geom = geom.buffer(dr, cap_style="round", quad_segs=self.quad_segs if quad_segs is None else quad_segs)
+            geom = geom.buffer(
+                dr, 
+                cap_style="round", 
+                quad_segs=self.quad_segs if quad_segs is None else quad_segs
+            )
             list_output.append(minkowski_funcs.calc_mfs(geom))
         
         return np.stack(
@@ -64,7 +70,8 @@ class MFEuclideanCalculator:
 
     def create_dilated_points_by_disk(self, coords, r, quad_segs=None):
         """
-        Create shapely Geometry object representing the Minkowski sum of points and a disk with radius r
+        Create shapely Geometry object representing 
+        the Minkowski sum of points and a disk with radius r
         This dilation function is for Steiner-type formula for Euclidean distance.
 
         Parameters
@@ -73,7 +80,8 @@ class MFEuclideanCalculator:
         r         : float
             Specifies the circle radius in the Minkowski sum.
         quad_segs : int, default 8
-            Specifies the number of linear segments in a quarter circle in the approximation of circular arcs.
+            Specifies the number of linear segments in a quarter circle in 
+            the approximation of circular arcs.
 
         Returns
         -------

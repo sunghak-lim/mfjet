@@ -1,6 +1,6 @@
 # mfjet
 
-`mfjet` is a Python package that computes Minkowski Functionals.
+`mfjet` is a Python package that provides tools for computing Minkowski functionals useful in jet physics.
 
 
 Installation
