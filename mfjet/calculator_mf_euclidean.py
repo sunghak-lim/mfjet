@@ -10,9 +10,31 @@ class MFEuclideanCalculator:
         self.quad_segs=quad_segs
 
     def calc_mfs(self, coords, r, quad_segs=None):
+        """
+        Create shapely Geometry object representing the Minkowski sum of points and a disk with radius r
+        This dilation function is for Steiner-type formula for Euclidean distance.
+
+        Parameters
+        ----------
+        coord     : array_like with shape (N_pt, 2)
+        r         : float or array_like
+            Specifies the circle radius in the Minkowski sum.
+        quad_segs : int, default 8
+            Specifies the number of linear segments in a quarter circle in the approximation of circular arcs.
+
+        Returns
+        -------
+        shapely.Polygon or shapely.MultiPolygon
+            geometry object representing dilated points
+
+        """
         if np.ndim(r) == 0:
-            geom = self.create_dilated_points_by_disk(coords, r, quad_segs)
-            return minkowski_funcs.calc_mfs(geom)
+            if r == 0:
+                npt = coords.shape[0]
+                return np.array([npt,0.,0.])
+            else:
+                geom = self.create_dilated_points_by_disk(coords, r, quad_segs)
+                return minkowski_funcs.calc_mfs(geom)
         else:
             return np.stack(
                 [
