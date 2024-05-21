@@ -12,8 +12,9 @@ pip install https://github.com/sunghak-lim/mfjet.git
 
 Examples
 -------
- * https://github.dev/sunghak-lim/mfjet/blob/main/examples/Tutorial_MF_Euclidean.ipynb
- * https://github.dev/sunghak-lim/mfjet/blob/main/examples/Tutorial_MF_Manhattan.ipynb
+ * [Example code for computing MFs in Eucildean geometry](examples/Tutorial_MF_Euclidean.ipynb)
+ * [Example code for computing MFs in Manhattan geometry](examples/Tutorial_MF_Manhattan.ipynb)
+ * [Example code for computing MFs in pixellated image] TBA
 
 Citing mfjet
 ------------
