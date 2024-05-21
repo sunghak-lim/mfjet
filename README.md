@@ -7,7 +7,7 @@ Installation
 ------------
 
 ```
-pip install https://github.com/sunghak-lim/mfjet.git
+pip install git+https://github.com/sunghak-lim/mfjet.git
 ```
 
 Examples
