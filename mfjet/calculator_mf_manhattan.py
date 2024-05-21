@@ -14,7 +14,8 @@ class MFManhattanCalculator:
     def calc_mfs(self, coords, r):
         if np.ndim(r) == 0:
             if r == 0:
-                return np.array([coord.shape[0],0.,0.])
+                npt = coords.shape[0]
+                return np.array([npt,0.,0.])
             else:
                 geom = self.create_dilated_points_by_square(coords, r)
                 return minkowski_funcs.calc_mfs(geom)
