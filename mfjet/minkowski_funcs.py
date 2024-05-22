@@ -1,5 +1,5 @@
 """
-Collection of codes calculating Minknowski functionals
+Collection of codes calculating Minknowski functionals of shapely Geometry objects.
 
 """
 from typing import Union
@@ -10,7 +10,7 @@ import shapely
 
 def calc_mfs(geom):
     """
-    calculate Minkowski functionals of given geometry.
+    Calculate Minkowski functionals of given geometry.
 
     Parameters
     ----------
@@ -35,7 +35,7 @@ def calc_mfs(geom):
 
 def calc_area(geom):
     """
-    calculate area of given geometry.
+    Calculate area of given geometry.
 
     Parameters
     ----------
@@ -72,7 +72,7 @@ def calc_length(geom):
 
 def calc_euler(geom: Union[shapely.Polygon, shapely.MultiPolygon]):
     """
-    calculate Euler characteristic of given geometry.
+    calculate Euler characteristic of given (multi)polygon.
 
     Parameters
     ----------
