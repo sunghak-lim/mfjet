@@ -1,1 +1,102 @@
-pass
+
+import numpy as np
+import scipy.sparse
+import scipy.signal
+
+class MFPixelCalculator:
+    """
+    Minkowski functional calculator for the persistent analysis with 
+    Steiner-type formula in Manhattan geometry. 
+    This module is for pixelerated binary image analysis. 
+
+    """
+    def __init__(self, bin_width=1., eps=1e-6, mode="center", diagonal_connected=False):
+        self.bin_width = bin_width
+
+        if mode == "center":
+            self.offset = -bin_width * 0.5
+        elif mode == "corner":
+            self.offset = 0
+        else:
+            raise ValueError(f'unknown mode: {mode}')
+        self.eps = eps
+
+
+        self.filter_binary = np.array([[1,2],[4,8]], dtype=int)
+
+        # lookup table for (local MF * 4)
+        self.lookup_mf_local = np.array([
+            [0,0,0],
+            [1,4,1],
+            [1,4,1],
+            [2,4,0],
+            [1,4,1],
+            [2,4,0],
+            [2,8,-2] if diagonal_connected else [2,8,2],
+            [3,4,-1],
+            [1,4,1],
+            [2,8,-2] if diagonal_connected else [2,8,2],
+            [2,4,0],
+            [3,4,-1],
+            [2,4,0],
+            [3,4,-1],
+            [3,4,-1],
+            [4,0,0]
+        ], dtype=int)[:,::-1]
+
+    def calc_mfs(
+            self, 
+            coords=None, r=None, 
+            img=None, 
+    ):
+        if img is None:
+            img = self.coord_to_img(coords)
+        if np.ndim(r) == 0:
+            if r == 0:
+                #npt = coords.shape[0]
+                #return np.array([npt,0.,0.])
+                return self.calc_mfs_from_img(img)
+            else:
+                square_width = np.ceil((r + self.bin_width*self.eps) / (self.bin_width * 0.5)).astype(int)
+                if square_width == 0:
+                    return self.calc_mfs_from_img(img)
+                else:
+                    img_dilated = self.dilate_by_square(img, square_width)
+                    return self.calc_mfs_from_img(img_dilated)
+        else:
+            return np.stack(
+                [
+                    self.calc_mfs(img=img, r=this_r)
+                    for this_r in r
+                ],
+                axis=0
+            )
+
+    def coord_to_img(self, coord):
+        bin_idx = np.floor((coord - self.offset + self.bin_width * self.eps) / self.bin_width).astype(int)
+        bin_idx_min = bin_idx.min(axis=0)
+        img = scipy.sparse.coo_array(
+            (
+                np.ones(coord.shape[0], dtype=int),
+                (bin_idx - bin_idx_min).T
+            )
+        ).astype(bool).astype(int).toarray()
+        return img
+
+    def dilate_by_square(self, img, square_width):
+        filter_square = np.ones((square_width, square_width), dtype=int)
+        img_dilated = scipy.signal.convolve(img, filter_square).astype(bool).astype(int)
+        return img_dilated
+
+    def calc_mfs_from_img(self, img):
+        subimage_binary_encoding = scipy.signal.convolve(
+            img, 
+            self.filter_binary
+        )
+        img_mfs_local = self.lookup_mf_local[subimage_binary_encoding]
+        arr_mfs = img_mfs_local.sum(axis=-2).sum(axis=-2) // 4
+        arr_mfs = arr_mfs * np.array([1., self.bin_width, self.bin_width**2])# count bin width
+        return arr_mfs
+        
+        
+        

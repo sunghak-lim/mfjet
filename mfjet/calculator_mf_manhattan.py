@@ -39,7 +39,7 @@ class MFManhattanCalculator:
                 npt = coords.shape[0]
                 return np.array([npt,0.,0.])
             else:
-                geom = self.create_dilated_points_by_square(coords, r)
+                geom = self.dilate_points_by_square(coords, r)
                 return minkowski_funcs.calc_mfs(geom)
         else:
             return np.stack(
@@ -50,7 +50,7 @@ class MFManhattanCalculator:
                 axis=0
             )
 
-    def create_dilated_points_by_square(self, coords, r):
+    def dilate_points_by_square(self, coords, r):
         """
         Dilate given points by a square with half-width r.
         This dilation function is for Steiner-type formula for Euclidean distance.

@@ -11,7 +11,7 @@ from . import minkowski_funcs
 class MFEuclideanCalculator:
     """
     Minkowski functional calculator for the persistent analysis with 
-    Steiner's formula in Euclidean geometry. 
+    Steiner-type formula in Euclidean geometry.
 
     Parameters
     ----------
@@ -50,7 +50,7 @@ class MFEuclideanCalculator:
                 npt = coords.shape[0]
                 return np.array([npt,0.,0.])
             else:
-                geom = self.create_dilated_points_by_disk(coords, r, quad_segs)
+                geom = self.dilate_points_by_disk(coords, r, quad_segs)
                 return minkowski_funcs.calc_mfs(geom)
         else:
             return np.stack(
@@ -61,7 +61,7 @@ class MFEuclideanCalculator:
                 axis=0
             )
 
-    def create_dilated_points_by_disk(self, coords, r, quad_segs=None):
+    def dilate_points_by_disk(self, coords, r, quad_segs=None):
         """
         Dilate given points by a disk with radius r.
         This dilation function is for Steiner-type formula for Euclidean distance.
