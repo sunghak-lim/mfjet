@@ -10,21 +10,17 @@ from . import minkowski_funcs
 
 class MFEuclideanCalculator:
     """
-    Minkowski functional calculator for the persistent analysis of 
+    Minkowski functional calculator for the persistent analysis with 
     Steiner's formula in Euclidean geometry. 
 
-    Attributes
+    Parameters
     ----------
     quad_segs : int, default 8
-        Specifies the number of linear segments in a quarter circle 
-        in the approximation of circular arcs.
+        The default number of linear segments in a quarter circle 
+        in the approximation of circular arcs. 
+        This number will be used as quad_segs param in shapely.buffer method 
+        if quad_segs is not provided to member funtions.
 
-    Methods
-    -------
-    calc_mfs(self, coords, r, quad_segs=None)
-        Compute MFs given points dilated by a disk with radius r.
-    create_dilated_points_by_disk(self, coords, r, quad_segs=None)
-        Dilate given points by a disk with radius r.
 
     """
     def __init__(self, quad_segs=8):
@@ -32,9 +28,7 @@ class MFEuclideanCalculator:
 
     def calc_mfs(self, coords, r, quad_segs=None):
         """
-        Create shapely Geometry object representing 
-        the Minkowski sum of points and a disk with radius r.
-        This dilation function is for Steiner-type formula for Euclidean distance.
+        Compute MFs given points dilated by a disk with radius r.
 
         Parameters
         ----------
@@ -69,8 +63,7 @@ class MFEuclideanCalculator:
 
     def create_dilated_points_by_disk(self, coords, r, quad_segs=None):
         """
-        Create shapely Geometry object representing 
-        the Minkowski sum of points and a disk with radius r
+        Dilate given points by a disk with radius r.
         This dilation function is for Steiner-type formula for Euclidean distance.
 
         Parameters
