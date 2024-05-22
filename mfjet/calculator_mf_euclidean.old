@@ -1,6 +1,3 @@
-"""
-
-"""
 
 import numpy as np
 import shapely
@@ -9,24 +6,6 @@ import shapely.ops
 from . import minkowski_funcs
 
 class MFEuclideanCalculator:
-    """
-    Minkowski functional calculator for the persistent analysis of 
-    Steiner's formula in Euclidean geometry. 
-
-    Attributes
-    ----------
-    quad_segs : int, default 8
-        Specifies the number of linear segments in a quarter circle 
-        in the approximation of circular arcs.
-
-    Methods
-    -------
-    calc_mfs(self, coords, r, quad_segs=None)
-        Compute MFs given points dilated by a disk with radius r.
-    create_dilated_points_by_disk(self, coords, r, quad_segs=None)
-        Dilate given points by a disk with radius r.
-
-    """
     def __init__(self, quad_segs=8):
         self.quad_segs=quad_segs
 
@@ -66,6 +45,28 @@ class MFEuclideanCalculator:
                 ],
                 axis=0
             )
+
+    def calc_mfs_sequential(self, coords, arr_r, quad_segs=None):
+        arr_dr = arr_r[1:] - arr_r[:-1]
+
+        list_output = []
+
+        r = arr_r[0]
+        geom = self.create_dilated_points_by_disk(coords, r, quad_segs)
+        list_output.append(minkowski_funcs.calc_mfs(geom))
+
+        for dr in arr_dr:
+            geom = geom.buffer(
+                dr, 
+                cap_style="round", 
+                quad_segs=self.quad_segs if quad_segs is None else quad_segs
+            )
+            list_output.append(minkowski_funcs.calc_mfs(geom))
+        
+        return np.stack(
+            list_output,
+            axis=0
+        )
 
     def create_dilated_points_by_disk(self, coords, r, quad_segs=None):
         """

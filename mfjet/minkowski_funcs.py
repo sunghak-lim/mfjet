@@ -20,10 +20,11 @@ def calc_mfs(geom):
     Returns
     -------
     np.array with shape (3,)
-        Minkowski functionals MF_k of given geometry
-            k=0: Euler characteristic
-            k=1: boundary length
-            k=2: geometry
+        Minkowski functionals MF[k] of given geometry
+
+        * k=0: Euler characteristic
+        * k=1: boundary length
+        * k=2: area
 
     """
     return np.array([
