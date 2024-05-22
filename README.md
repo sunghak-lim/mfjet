@@ -3,8 +3,15 @@
 `mfjet` is a Python package that provides tools for computing Minkowski functionals useful in jet physics.
 
 
- * [Morphology for Jet Classification](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.014004), arXiv:2010.13469
- * [Jet Classification Using High-Level Features from Anatomy of Top Jets](https://arxiv.org/abs/2312.11760), arXiv:2312.11760
+ * [Neural Network-based Top Tagger with Two-Point Energy Correlations and Geometry of Soft Emissions](https://doi.org/10.1007/JHEP07%282020%29111), 
+    Amit Chakraborty, Sung Hak Lim, Mihoko M. Nojiri, Michihisa Takeuchi,
+    arXiv:2003.11787
+ * [Morphology for Jet Classification](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.014004), 
+    Sung Hak Lim and Mihoko M. Nojiri, 
+    Phys. Rev. D 105, 014004, arXiv:2010.13469
+ * [Jet Classification Using High-Level Features from Anatomy of Top Jets](https://arxiv.org/abs/2312.11760), 
+    Amon Furuichi, Sung Hak Lim and Mihoko M. Nojiri, 
+    arXiv:2312.11760
 
 Installation
 ------------
