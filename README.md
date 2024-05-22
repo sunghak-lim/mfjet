@@ -5,7 +5,7 @@
 
  * [Neural Network-based Top Tagger with Two-Point Energy Correlations and Geometry of Soft Emissions](https://doi.org/10.1007/JHEP07%282020%29111), <br />
     Amit Chakraborty, Sung Hak Lim, Mihoko M. Nojiri, and Michihisa Takeuchi, <br />
-    arXiv:2003.11787
+    JHEP 07 (2020) 111, arXiv:2003.11787
  * [Morphology for Jet Classification](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.014004), <br />
     Sung Hak Lim, and Mihoko M. Nojiri, <br />
     Phys. Rev. D 105, 014004, arXiv:2010.13469
@@ -32,5 +32,5 @@ Citing mfjet
 References
 ----------
  * Steiner-type formulas
-   * (Euclidean geometry) https://arxiv.org/abs/1012.5881
-   * (Manhattan geometry) https://arxiv.org/abs/1207.7276
+   * (Euclidean geometry) (https://arxiv.org/abs/1012.5881)
+   * (Manhattan geometry) (https://arxiv.org/abs/1207.7276)
