@@ -9,7 +9,6 @@ Provides
 
 """
 
-from .dilation import *
 from .minkowski_funcs import *
 from .calculator_mf_euclidean import MFEuclideanCalculator
 from .calculator_mf_manhattan import MFManhattanCalculator

@@ -12,7 +12,7 @@ from . import minkowski_funcs
 class MFManhattanCalculator:
     """
     Minkowski functional calculator for the persistent analysis with 
-    Steiner's formula in Manhattan geometry. 
+    Steiner-type formula in Manhattan geometry. 
 
     """
     def __init__(self):
