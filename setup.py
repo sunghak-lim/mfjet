@@ -23,7 +23,7 @@ setup(
     install_requires=[
         "numpy",
         "scipy",
-        "shapely",
+        "shapely>=2",
     ],
     dependency_links=[],
 )
