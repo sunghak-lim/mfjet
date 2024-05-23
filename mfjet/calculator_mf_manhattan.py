@@ -30,7 +30,7 @@ class MFManhattanCalculator:
 
         Returns
         -------
-        np.array with shape (3,) or (len(r), 3)
+        np.array with shape (3,) or (r.shape, 3)
             array of Minkowski functionals given r. 
             The last index k is labeling $k$-th Minkiwski functionals
                k=0: Euler characteristic
