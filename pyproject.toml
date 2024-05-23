@@ -6,20 +6,20 @@ requires = [
 
 [project]
 name = "mfjet"
-
-license = {file = "LICENSE.md"}
-
 description = "Minkowski functionals in jet physics"
 authors = [{name = "Sung Hak Lim"}]
 maintainers = [
     {name = "Sung Hak Lim"}
 ]
-requires-python = ">=3.7"
-readme = "README.md"
 
-dynamic = ["version"]
+requires-python = ">=3.7"
 dependencies = [
     "numpy",
     "scipy",
     "shapely>=2",
 ]
+
+readme = "README.md"
+license = {file = "LICENSE.md"}
+
+dynamic = ["version"]
