@@ -10,8 +10,8 @@ Provides
 """
 
 from .minkowski_funcs import *
-from .calculator_mf_euclidean import MFEuclideanCalculator
-from .calculator_mf_manhattan import MFManhattanCalculator
-from .calculator_mf_pixel     import MFPixelCalculator
+from .calculator_mf_euclidean import *
+from .calculator_mf_manhattan import *
+from .calculator_mf_pixel     import *
 
 from .version import __version__

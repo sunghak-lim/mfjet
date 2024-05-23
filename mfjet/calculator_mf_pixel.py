@@ -3,11 +3,46 @@ import numpy as np
 import scipy.sparse
 import scipy.signal
 
+from .calculator_mf_manhattan import MFManhattanCalculator
+from . import pixel_utils
+
 class MFPixelCalculator:
     """
     Minkowski functional calculator for the persistent analysis with 
     Steiner-type formula in Manhattan geometry. 
     This module is for pixelerated binary image analysis. 
+
+    """
+
+    def __init__(self, bin_width=1., eps=1e-6, mode="center", diagonal_connected=False):
+        self.bin_width = bin_width
+        self.mode = mode
+
+        if mode == "center":
+            self.offset = -bin_width * 0.5
+        elif mode == "corner":
+            self.offset = 0
+        else:
+            raise ValueError(f'unknown mode: {mode}')
+        self.eps = eps
+
+        if diagonal_connected:
+            raise NotImplementedError("connected diagonal is not implemented yet. Please use MFPixelCalculatorMarchingSquare")
+
+        self.calc = MFManhattanCalculator()
+
+    def calc_mfs(self, coords, r):
+        buf_coords = pixel_utils.coords_to_binned_coords(coords, bin_width=self.bin_width, eps=self.eps, mode=self.mode)
+        half_width = self.bin_width * 0.5
+        buf_r = np.ceil((r + half_width * self.eps)/ half_width) * half_width
+        return self.calc.calc_mfs(buf_coords, buf_r)
+
+class MFPixelCalculatorMarchingSquare:
+    """
+    Minkowski functional calculator for the persistent analysis with 
+    Steiner-type formula in Manhattan geometry. 
+    This module is for pixelerated binary image analysis.
+    This module uses marching square algorithm instead of shapely.
 
     """
     def __init__(self, bin_width=1., eps=1e-6, mode="center", diagonal_connected=False):

@@ -73,3 +73,4 @@ class MFManhattanCalculator:
         ]
         geom_dilated_points = shapely.ops.unary_union(list_dilated_points)
         return geom_dilated_points
+
