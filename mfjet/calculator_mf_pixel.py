@@ -10,7 +10,8 @@ class MFPixelCalculator:
     """
     Minkowski functional calculator for the persistent analysis with 
     Steiner-type formula in Manhattan geometry. 
-    This module is for pixelerated binary image analysis. 
+    This module is for pixelerated binary image analysis.
+    This module is using shapely, and faster than marching square algorithm.
 
     """
 
