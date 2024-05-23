@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to test's documentation!
+Welcome to mfjet's documentation!
 ================================
 
 .. toctree::
@@ -18,5 +18,5 @@ Indices and tables
 * :ref:`modindex`
 
 
-# * :ref:`genindex`
-# * :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`search`
