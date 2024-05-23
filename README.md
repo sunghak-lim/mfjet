@@ -16,12 +16,12 @@
 Installation
 ------------
 
-Development version
+## Development version
 ```
 pip install git+https://github.com/sunghak-lim/mfjet.git
 ```
 
-Dependency
+## Dependency
  * numpy, scipy, shapely
 
 Examples
