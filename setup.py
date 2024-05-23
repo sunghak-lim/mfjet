@@ -5,7 +5,7 @@ this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-version_file = os.path.join(path.abspath(os.path.dirname(__file__)), 'mfjet', 'version.py')
+version_file = path.join(path.abspath(path.dirname(__file__)), 'mfjet', 'version.py')
 with open(version_file, 'r') as file:
     exec(file.read())
 
