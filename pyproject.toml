@@ -1,0 +1,25 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools"
+]
+
+[project]
+name = "mfjet"
+
+license = {file = "LICENSE.md"}
+
+description = "Minkowski functionals in jet physics"
+authors = [{name = "Sung Hak Lim"}]
+maintainers = [
+    {name = "Sung Hak Lim"}
+]
+requires-python = ">=3.7"
+readme = "README.md"
+
+dynamic = ["version"]
+dependencies = [
+    "numpy",
+    "scipy",
+    "shapely>=2",
+]
