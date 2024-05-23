@@ -36,6 +36,18 @@ API Documentations
 
 Citing mfjet
 ------------
+To cite the package: (To be updated.)
+'''bibtex
+@article{Furuichi:2023vdx,
+    author = "Furuichi, Amon and Lim, Sung Hak and Nojiri, Mihoko M.",
+    title = "{Jet Classification Using High-Level Features from Anatomy of Top Jets}",
+    eprint = "2312.11760",
+    archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
+    month = "12",
+    year = "2023"
+}
+'''
 
 References
 ----------
