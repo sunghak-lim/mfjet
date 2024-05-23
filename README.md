@@ -1,5 +1,7 @@
 # mfjet
 
+![Python](https://img.shields.io/badge/python-3.7-blue.svg)
+
 `mfjet` is a Python package that provides tools for computing Minkowski functionals useful for encoding geometric features of [jets](https://en.wikipedia.org/wiki/Jet_(particle_physics)) appearing in high energy particle colliders.
 
  * [Neural Network-based Top Tagger with Two-Point Energy Correlations and Geometry of Soft Emissions](https://doi.org/10.1007/JHEP07%282020%29111), <br />
@@ -21,7 +23,9 @@ pip install git+https://github.com/sunghak-lim/mfjet.git
 ```
 
 ### Requirements
- * [numpy](https://numpy.org/), [scipy](https://scipy.org/), [shapely](https://shapely.readthedocs.io/en/stable/)
+ * python >= 3.7
+ * [shapely](https://shapely.readthedocs.io/en/stable/) >= 2.0
+ * [numpy](https://numpy.org/), [scipy](https://scipy.org/)
 
 Examples
 -------
