@@ -50,7 +50,7 @@ Please use this bibtex: (Details to be updated.)
 
 References
 ----------
- * Hadwiger's theorem and Valuations
+ * Hadwiger's theorem and valuations
  * Steiner-type formulas
    * (Euclidean geometry) (https://arxiv.org/abs/1207.7276)
    * (Manhattan geometry) (https://arxiv.org/abs/1012.5881)
