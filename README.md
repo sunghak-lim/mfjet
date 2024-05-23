@@ -36,7 +36,7 @@ API Documentations
 
 Citing mfjet
 ------------
-To cite the package: (To be updated.)
+Please use this bibtex: (Details to be updated.)
 ```bibtex
 @article{Furuichi:2023vdx,
     author = "Furuichi, Amon and Lim, Sung Hak and Nojiri, Mihoko M.",
