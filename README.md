@@ -21,7 +21,7 @@ pip install git+https://github.com/sunghak-lim/mfjet.git
 ```
 
 ### Dependency
- * numpy, scipy, shapely
+ * [numpy](https://numpy.org/), [scipy](https://scipy.org/), [shapely](https://shapely.readthedocs.io/en/stable/)
 
 Examples
 -------
