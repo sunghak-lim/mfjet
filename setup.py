@@ -22,6 +22,7 @@ setup(
     license="",
     install_requires=[
         "numpy",
+        "scipy",
         "shapely",
     ],
     dependency_links=[],

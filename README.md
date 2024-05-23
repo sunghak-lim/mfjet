@@ -21,6 +21,9 @@ Development version
 pip install git+https://github.com/sunghak-lim/mfjet.git
 ```
 
+Dependency
+ * numpy, scipy, shapely
+
 Examples
 -------
  * [Example code for computing MFs in Eucildean geometry](examples/Tutorial_MF_Euclidean.ipynb),
