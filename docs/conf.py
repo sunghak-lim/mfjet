@@ -85,7 +85,7 @@ html_static_path = ['_static']
 # hack for accessing module path
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../mfjet'))
+sys.path.insert(0, os.path.abspath('../'))
 
 
 # ClassDocumenter.add_directive_header uses ClassDocumenter.add_line to
