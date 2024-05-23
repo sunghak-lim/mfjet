@@ -30,6 +30,10 @@ Examples
  * [Example code for computing MFs in Manhattan geometry](examples/Tutorial_MF_Manhattan.ipynb)
  * [Example code for computing MFs of pixellated image](examples/Tutorial_MF_Pixel.ipynb)
 
+API Documentations
+------------------
+ * [Module documentations](https://mfjet.readthedocs.io/en/latest/py-modindex.html)
+
 Citing mfjet
 ------------
 
