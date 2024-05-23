@@ -1,5 +1,6 @@
 # mfjet
 
+[![github](https://badges.aleen42.com/src/github.svg)](https://github.com/sunghak-lim/mfjet)
 ![Python](https://img.shields.io/badge/python->=3.7-blue.svg)
 ![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)
 [![Documentation Status](https://readthedocs.org/projects/mfjet/badge/?version=latest)](https://mfjet.readthedocs.io/en/latest/?badge=latest)
