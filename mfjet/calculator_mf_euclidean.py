@@ -32,17 +32,21 @@ class MFEuclideanCalculator:
 
         Parameters
         ----------
-        coord     : array_like with shape (N_pt, 2)
+        coords    : array_like with shape (N_pt, 2)
         r         : float or array_like
-            Specifies the circle radius in the Minkowski sum.
+            The circle radius in the Minkowski sum.
         quad_segs : int, default 8
-            Specifies the number of linear segments in a quarter circle in 
+            The number of linear segments in a quarter circle in 
             the approximation of circular arcs.
 
         Returns
         -------
-        shapely.Polygon or shapely.MultiPolygon
-            geometry object representing dilated points
+        np.array with shape (3,) or (len(r), 3)
+            array of Minkowski functionals given r. 
+            The last index k is labeling $k$-th Minkiwski functionals
+               k=0: Euler characteristic
+               k=1: Boundary length
+               k=2: Area
 
         """
         if np.ndim(r) == 0:
@@ -68,11 +72,11 @@ class MFEuclideanCalculator:
 
         Parameters
         ----------
-        coord     : array_like with shape (N_pt, 2)
+        coords    : array_like with shape (N_pt, 2)
         r         : float
-            Specifies the circle radius in the Minkowski sum.
+            The circle radius in the Minkowski sum.
         quad_segs : int, default 8
-            Specifies the number of linear segments in a quarter circle in 
+            The number of linear segments in a quarter circle in 
             the approximation of circular arcs.
 
         Returns

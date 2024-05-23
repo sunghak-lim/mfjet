@@ -24,14 +24,18 @@ class MFManhattanCalculator:
 
         Parameters
         ----------
-        coord     : array_like with shape (N_pt, 2)
+        coords    : array_like with shape (N_pt, 2)
         r         : float or array_like
             Specifies the half-width of a square in the Minkowski sum.
 
         Returns
         -------
-        shapely.Polygon or shapely.MultiPolygon
-            geometry object representing dilated points
+        np.array with shape (3,) or (len(r), 3)
+            array of Minkowski functionals given r. 
+            The last index k is labeling $k$-th Minkiwski functionals
+               k=0: Euler characteristic
+               k=1: Boundary length
+               k=2: Area
 
         """
         if np.ndim(r) == 0:
@@ -57,7 +61,7 @@ class MFManhattanCalculator:
 
         Parameters
         ----------
-        coord     : array_like with shape (N_pt, 2)
+        coords    : array_like with shape (N_pt, 2)
         r         : float
             Specifies the half-width of a square in the Minkowski sum.
 

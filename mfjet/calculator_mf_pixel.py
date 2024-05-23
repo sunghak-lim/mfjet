@@ -13,6 +13,25 @@ class MFPixelCalculator:
     This module is for pixelerated binary image analysis.
     This module is using shapely, and faster than marching square algorithm.
 
+    Parameters
+    ----------
+    bin_width : float, default 1.
+        pixel width
+    eps : float, default 1e-6
+        epsilon parameter for determining points on the closed boundary of given pixel.
+        For a pixel [x0,x1) x [y0,y1), the tolerance of covering points on the closed boundary will be 
+            (x-x0) >= -(bin_width) * (eps), (y-y0) >= -(bin_width) * (eps).
+    mode : str, default is "center"
+        If mode is "center", pixel's center will be used as its representative coordinate.
+        For example, the origin (0,0) will be covered by a pixel [-bin_width/2, bin_width/2)x[-bin_width/2, bin_width/2)
+
+        If mode is "corner", pixel's left bottom corner will be used as its representative coordinate.
+        For example, the origin (0,0) will be covered by a pixel [0, bin_width)x[0, bin_width/2)
+
+    diagonal_connected : bool, default False:
+        If true, diagonally connected pixels will be considered as a connected piece. 
+        This flag will affect only calculation of Euler characteristics.
+
     """
 
     def __init__(self, bin_width=1., eps=1e-6, mode="center", diagonal_connected=False):
@@ -33,6 +52,28 @@ class MFPixelCalculator:
         self.calc = MFManhattanCalculator()
 
     def calc_mfs(self, coords, r):
+        """
+        Compute MFs given points dilated by a square with half-width r.
+        This function automatically takes care of pixelation of coords and discretization of dialation scale.
+        The dilation scale r will be discretized as follows:
+            r -> Ceil[r / (bin_width*0.5)] * (bin_width*0.5)
+
+        Parameters
+        ----------
+        coords    : array_like with shape (N_pt, 2)
+        r         : float or array_like
+            Specifies the half-width of a square in the Minkowski sum.
+
+        Returns
+        -------
+        np.array with shape (3,) or (len(r), 3)
+            array of Minkowski functionals given r. 
+            The last index k is labeling $k$-th Minkiwski functionals
+               k=0: Euler characteristic
+               k=1: Boundary length
+               k=2: Area
+
+        """
         buf_coords = pixel_utils.coords_to_binned_coords(coords, bin_width=self.bin_width, eps=self.eps, mode=self.mode)
         half_width = self.bin_width * 0.5
         buf_r = np.ceil((r + half_width * self.eps)/ half_width) * half_width
@@ -45,7 +86,27 @@ class MFPixelCalculatorMarchingSquare:
     This module is for pixelerated binary image analysis.
     This module uses marching square algorithm instead of shapely.
 
+    Parameters
+    ----------
+    bin_width : float, default 1.
+        pixel width
+    eps : float, default 1e-6
+        epsilon parameter for determining points on the closed boundary of given pixel.
+        For a pixel [x0,x1) x [y0,y1), the tolerance of covering points on the closed boundary will be 
+            (x-x0) >= -(bin_width) * (eps), (y-y0) >= -(bin_width) * (eps).
+    mode : str, default is "center"
+        If mode is "center", pixel's center will be used as its representative coordinate.
+        For example, the origin (0,0) will be covered by a pixel [-bin_width/2, bin_width/2)x[-bin_width/2, bin_width/2)
+
+        If mode is "corner", pixel's left bottom corner will be used as its representative coordinate.
+        For example, the origin (0,0) will be covered by a pixel [0, bin_width)x[0, bin_width/2)
+
+    diagonal_connected : bool, default False:
+        If true, diagonally connected pixels will be considered as a connected piece. 
+        This flag will affect only calculation of Euler characteristics.
+
     """
+
     def __init__(self, bin_width=1., eps=1e-6, mode="center", diagonal_connected=False):
         self.bin_width = bin_width
 
@@ -85,6 +146,28 @@ class MFPixelCalculatorMarchingSquare:
             coords=None, r=None, 
             img=None, 
     ):
+        """
+        Compute MFs given points dilated by a square with half-width r.
+        This function automatically takes care of pixelation of coords and discretization of dialation scale.
+        The dilation scale r will be discretized as follows:
+            r -> Ceil[r / (bin_width*0.5)] * (bin_width*0.5)
+
+        Parameters
+        ----------
+        coords    : array_like with shape (N_pt, 2)
+        r         : float or array_like
+            Specifies the half-width of a square in the Minkowski sum.
+
+        Returns
+        -------
+        np.array with shape (3,) or (len(r), 3)
+            array of Minkowski functionals given r. 
+            The last index k is labeling $k$-th Minkiwski functionals
+               k=0: Euler characteristic
+               k=1: Boundary length
+               k=2: Area
+
+        """
         if img is None:
             img = self.coord_to_img(coords)
         if np.ndim(r) == 0:
