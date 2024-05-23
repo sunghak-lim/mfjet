@@ -23,3 +23,7 @@ readme = "README.md"
 license = {file = "LICENSE.md"}
 
 dynamic = ["version"]
+
+[tool.setuptools.packages.find]
+include = ["mfjet"]
+exclude = ["docs", "tests", "examples"]
