@@ -1,0 +1,7 @@
+# Defining the exact version will make sure things don't break
+sphinx==5.3.0
+pydata_sphinx_theme
+readthedocs-sphinx-search==0.1.1
+numpy
+scipy
+shapely
