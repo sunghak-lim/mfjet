@@ -68,7 +68,7 @@ def calc_length(geom):
     """
     boundary = geom.boundary
     if boundary is None:
-        raise ValueError(f"Boundary is undefined. input geom type: {type(geom)}")
+        raise ValueError("Boundary is undefined. input geom type: {}".format(type(geom)))
     return boundary.length
 
 def calc_euler(geom: Union[shapely.Polygon, shapely.MultiPolygon]):
@@ -91,7 +91,7 @@ def calc_euler(geom: Union[shapely.Polygon, shapely.MultiPolygon]):
     elif isinstance(geom, shapely.Polygon):
         euler = calc_euler_poly(geom)
     else:
-        raise TypeError(f"unsupported type: {type(geom)}")
+        raise TypeError("unsupported type: {}".format(type(geom)))
     return euler
 
 def calc_euler_poly(poly):
