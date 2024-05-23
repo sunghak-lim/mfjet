@@ -243,8 +243,8 @@ document.write(`
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">mfjet.calculator_mf_euclidean module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.calculator_mf_manhattan.html">mfjet.calculator_mf_manhattan module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.calculator_mf_pixel.html">mfjet.calculator_mf_pixel module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mfjet.dilation.html">mfjet.dilation module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.minkowski_funcs.html">mfjet.minkowski_funcs module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mfjet.pixel_utils.html">mfjet.pixel_utils module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.version.html">mfjet.version module</a></li>
 </ul>
 </div>
@@ -307,7 +307,7 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mfjet.calculator_mf_euclidean.</span></span><span class="sig-name descname"><span class="pre">MFEuclideanCalculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quad_segs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_euclidean.MFEuclideanCalculator" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Minkowski functional calculator for the persistent analysis with
-Steiner’s formula in Euclidean geometry.</p>
+Steiner-type formula in Euclidean geometry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>quad_segs</strong> (<em>int, default 8</em>) – The default number of linear segments in a quarter circle
@@ -339,8 +339,8 @@ the approximation of circular arcs.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mfjet.calculator_mf_euclidean.MFEuclideanCalculator.create_dilated_points_by_disk">
-<span class="sig-name descname"><span class="pre">create_dilated_points_by_disk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quad_segs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_euclidean.MFEuclideanCalculator.create_dilated_points_by_disk" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="mfjet.calculator_mf_euclidean.MFEuclideanCalculator.dilate_points_by_disk">
+<span class="sig-name descname"><span class="pre">dilate_points_by_disk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quad_segs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_euclidean.MFEuclideanCalculator.dilate_points_by_disk" title="Link to this definition">#</a></dt>
 <dd><p>Dilate given points by a disk with radius r.
 This dilation function is for Steiner-type formula for Euclidean distance.</p>
 <dl class="field-list simple">
@@ -395,7 +395,7 @@ the approximation of circular arcs.</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_euclidean.MFEuclideanCalculator"><code class="docutils literal notranslate"><span class="pre">MFEuclideanCalculator</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_euclidean.MFEuclideanCalculator.calc_mfs"><code class="docutils literal notranslate"><span class="pre">MFEuclideanCalculator.calc_mfs()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_euclidean.MFEuclideanCalculator.create_dilated_points_by_disk"><code class="docutils literal notranslate"><span class="pre">MFEuclideanCalculator.create_dilated_points_by_disk()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_euclidean.MFEuclideanCalculator.dilate_points_by_disk"><code class="docutils literal notranslate"><span class="pre">MFEuclideanCalculator.dilate_points_by_disk()</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -243,8 +243,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="mfjet.calculator_mf_euclidean.html">mfjet.calculator_mf_euclidean module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.calculator_mf_manhattan.html">mfjet.calculator_mf_manhattan module</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">mfjet.calculator_mf_pixel module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mfjet.dilation.html">mfjet.dilation module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.minkowski_funcs.html">mfjet.minkowski_funcs module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mfjet.pixel_utils.html">mfjet.pixel_utils module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.version.html">mfjet.version module</a></li>
 </ul>
 </div>
@@ -302,6 +302,51 @@ document.write(`
                   
   <section id="module-mfjet.calculator_mf_pixel">
 <span id="mfjet-calculator-mf-pixel-module"></span><h1>mfjet.calculator_mf_pixel module<a class="headerlink" href="#module-mfjet.calculator_mf_pixel" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mfjet.calculator_mf_pixel.MFPixelCalculator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mfjet.calculator_mf_pixel.</span></span><span class="sig-name descname"><span class="pre">MFPixelCalculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bin_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'center'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diagonal_connected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_pixel.MFPixelCalculator" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Minkowski functional calculator for the persistent analysis with
+Steiner-type formula in Manhattan geometry.
+This module is for pixelerated binary image analysis.
+This module is using shapely, and faster than marching square algorithm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mfjet.calculator_mf_pixel.MFPixelCalculator.calc_mfs">
+<span class="sig-name descname"><span class="pre">calc_mfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_pixel.MFPixelCalculator.calc_mfs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mfjet.calculator_mf_pixel.</span></span><span class="sig-name descname"><span class="pre">MFPixelCalculatorMarchingSquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bin_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'center'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diagonal_connected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Minkowski functional calculator for the persistent analysis with
+Steiner-type formula in Manhattan geometry.
+This module is for pixelerated binary image analysis.
+This module uses marching square algorithm instead of shapely.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.calc_mfs">
+<span class="sig-name descname"><span class="pre">calc_mfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.calc_mfs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.coord_to_img">
+<span class="sig-name descname"><span class="pre">coord_to_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.coord_to_img" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.dilate_img_by_square">
+<span class="sig-name descname"><span class="pre">dilate_img_by_square</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">square_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.dilate_img_by_square" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.calc_mfs_from_img">
+<span class="sig-name descname"><span class="pre">calc_mfs_from_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.calc_mfs_from_img" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -323,6 +368,28 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_pixel.MFPixelCalculator"><code class="docutils literal notranslate"><span class="pre">MFPixelCalculator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_pixel.MFPixelCalculator.calc_mfs"><code class="docutils literal notranslate"><span class="pre">MFPixelCalculator.calc_mfs()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare"><code class="docutils literal notranslate"><span class="pre">MFPixelCalculatorMarchingSquare</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.calc_mfs"><code class="docutils literal notranslate"><span class="pre">MFPixelCalculatorMarchingSquare.calc_mfs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.coord_to_img"><code class="docutils literal notranslate"><span class="pre">MFPixelCalculatorMarchingSquare.coord_to_img()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.dilate_img_by_square"><code class="docutils literal notranslate"><span class="pre">MFPixelCalculatorMarchingSquare.dilate_img_by_square()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_pixel.MFPixelCalculatorMarchingSquare.calc_mfs_from_img"><code class="docutils literal notranslate"><span class="pre">MFPixelCalculatorMarchingSquare.calc_mfs_from_img()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 

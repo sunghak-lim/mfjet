@@ -243,8 +243,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="mfjet.calculator_mf_euclidean.html">mfjet.calculator_mf_euclidean module</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">mfjet.calculator_mf_manhattan module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.calculator_mf_pixel.html">mfjet.calculator_mf_pixel module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mfjet.dilation.html">mfjet.dilation module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.minkowski_funcs.html">mfjet.minkowski_funcs module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mfjet.pixel_utils.html">mfjet.pixel_utils module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mfjet.version.html">mfjet.version module</a></li>
 </ul>
 </div>
@@ -307,7 +307,7 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mfjet.calculator_mf_manhattan.</span></span><span class="sig-name descname"><span class="pre">MFManhattanCalculator</span></span><a class="headerlink" href="#mfjet.calculator_mf_manhattan.MFManhattanCalculator" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Minkowski functional calculator for the persistent analysis with
-Steiner’s formula in Manhattan geometry.</p>
+Steiner-type formula in Manhattan geometry.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mfjet.calculator_mf_manhattan.MFManhattanCalculator.calc_mfs">
 <span class="sig-name descname"><span class="pre">calc_mfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_manhattan.MFManhattanCalculator.calc_mfs" title="Link to this definition">#</a></dt>
@@ -329,8 +329,8 @@ Steiner’s formula in Manhattan geometry.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mfjet.calculator_mf_manhattan.MFManhattanCalculator.create_dilated_points_by_square">
-<span class="sig-name descname"><span class="pre">create_dilated_points_by_square</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_manhattan.MFManhattanCalculator.create_dilated_points_by_square" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="mfjet.calculator_mf_manhattan.MFManhattanCalculator.dilate_points_by_square">
+<span class="sig-name descname"><span class="pre">dilate_points_by_square</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mfjet.calculator_mf_manhattan.MFManhattanCalculator.dilate_points_by_square" title="Link to this definition">#</a></dt>
 <dd><p>Dilate given points by a square with half-width r.
 This dilation function is for Steiner-type formula for Euclidean distance.</p>
 <dl class="field-list simple">
@@ -383,7 +383,7 @@ This dilation function is for Steiner-type formula for Euclidean distance.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_manhattan.MFManhattanCalculator"><code class="docutils literal notranslate"><span class="pre">MFManhattanCalculator</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_manhattan.MFManhattanCalculator.calc_mfs"><code class="docutils literal notranslate"><span class="pre">MFManhattanCalculator.calc_mfs()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_manhattan.MFManhattanCalculator.create_dilated_points_by_square"><code class="docutils literal notranslate"><span class="pre">MFManhattanCalculator.create_dilated_points_by_square()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfjet.calculator_mf_manhattan.MFManhattanCalculator.dilate_points_by_square"><code class="docutils literal notranslate"><span class="pre">MFManhattanCalculator.dilate_points_by_square()</span></code></a></li>
 </ul>
 </li>
 </ul>

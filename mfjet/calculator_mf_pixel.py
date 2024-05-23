@@ -97,7 +97,7 @@ class MFPixelCalculatorMarchingSquare:
                 if square_width == 0:
                     return self.calc_mfs_from_img(img)
                 else:
-                    img_dilated = self.dilate_by_square(img, square_width)
+                    img_dilated = self.dilate_img_by_square(img, square_width)
                     return self.calc_mfs_from_img(img_dilated)
         else:
             return np.stack(
@@ -119,7 +119,7 @@ class MFPixelCalculatorMarchingSquare:
         ).astype(bool).astype(int).toarray()
         return img
 
-    def dilate_by_square(self, img, square_width):
+    def dilate_img_by_square(self, img, square_width):
         filter_square = np.ones((square_width, square_width), dtype=int)
         img_dilated = scipy.signal.convolve(img, filter_square).astype(bool).astype(int)
         return img_dilated
