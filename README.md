@@ -2,7 +2,6 @@
 
 `mfjet` is a Python package that provides tools for computing Minkowski functionals useful for encoding geometric features of jets appearing in high energy particle colliders.
 
-
  * [Neural Network-based Top Tagger with Two-Point Energy Correlations and Geometry of Soft Emissions](https://doi.org/10.1007/JHEP07%282020%29111), <br />
     Amit Chakraborty, Sung Hak Lim, Mihoko M. Nojiri, and Michihisa Takeuchi, <br />
     JHEP 07 (2020) 111, arXiv:2003.11787
