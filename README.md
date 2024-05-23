@@ -1,6 +1,6 @@
 # mfjet
 
-![Python](https://img.shields.io/badge/python-3.7-blue.svg)
+![Python](https://img.shields.io/badge/python->=3.7-blue.svg)
 ![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)
 
 `mfjet` is a Python package that provides tools for computing Minkowski functionals useful for encoding geometric features of [jets](https://en.wikipedia.org/wiki/Jet_(particle_physics)) appearing in high energy particle colliders.
