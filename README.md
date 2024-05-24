@@ -7,6 +7,9 @@
 
 `mfjet` is a Python package that provides tools for computing Minkowski functionals useful for encoding geometric features of [jets](https://en.wikipedia.org/wiki/Jet_(particle_physics)) appearing in high energy particle colliders.
 
+
+#### References
+
  * [Neural Network-based Top Tagger with Two-Point Energy Correlations and Geometry of Soft Emissions](https://doi.org/10.1007/JHEP07%282020%29111), <br />
     Amit Chakraborty, Sung Hak Lim, Mihoko M. Nojiri, and Michihisa Takeuchi, <br />
     JHEP 07 (2020) 111, arXiv:2003.11787
@@ -36,7 +39,7 @@ Examples
  * [Example code for computing MFs in Manhattan geometry](examples/Tutorial_MF_Manhattan.ipynb)
  * [Example code for computing MFs of pixellated image](examples/Tutorial_MF_Pixel.ipynb)
 
-API Documentations
+Documentations
 ------------------
  * [Module documentations](https://mfjet.readthedocs.io/en/latest/py-modindex.html)
 
@@ -55,8 +58,8 @@ Please use this bibtex: (Details to be updated.)
 }
 ```
 
-References
-----------
+See also
+--------
  * Hadwiger's theorem and valuations
  * Steiner-type formulas
    * (Euclidean geometry) (https://arxiv.org/abs/1207.7276)
