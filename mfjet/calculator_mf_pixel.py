@@ -43,7 +43,7 @@ class MFPixelCalculator:
         elif mode == "corner":
             self.offset = 0
         else:
-            raise ValueError(f'unknown mode: {mode}')
+            raise ValueError(f"unknown mode: {mode}")
         self.eps = eps
 
         if diagonal_connected:
@@ -67,7 +67,7 @@ class MFPixelCalculator:
         Returns
         -------
         np.array with shape (3,) or (r.shape, 3)
-            array of Minkowski functionals given r. 
+            array of Minkowski functionals given r.
             The last index k is labeling $k$-th Minkiwski functionals
                k=0: Euler characteristic
                k=1: Boundary length
@@ -81,8 +81,8 @@ class MFPixelCalculator:
 
 class MFPixelCalculatorMarchingSquare:
     """
-    Minkowski functional calculator for the persistent analysis with 
-    Steiner-type formula in Manhattan geometry. 
+    Minkowski functional calculator for the persistent analysis with
+    Steiner-type formula in Manhattan geometry.
     This module is for pixelerated binary image analysis.
     This module uses marching square algorithm instead of shapely.
 
@@ -92,7 +92,7 @@ class MFPixelCalculatorMarchingSquare:
         pixel width
     eps : float, default 1e-6
         epsilon parameter for determining points on the closed boundary of given pixel.
-        For a pixel [x0,x1) x [y0,y1), the tolerance of covering points on the closed boundary will be 
+        For a pixel [x0,x1) x [y0,y1), the tolerance of covering points on the closed boundary will be
             (x-x0) >= -(bin_width) * (eps), (y-y0) >= -(bin_width) * (eps).
     mode : str, default is "center"
         If mode is "center", pixel's center will be used as its representative coordinate.
@@ -102,7 +102,7 @@ class MFPixelCalculatorMarchingSquare:
         For example, the origin (0,0) will be covered by a pixel [0, bin_width)x[0, bin_width/2)
 
     diagonal_connected : bool, default False:
-        If true, diagonally connected pixels will be considered as a connected piece. 
+        If true, diagonally connected pixels will be considered as a connected piece.
         This flag will affect only calculation of Euler characteristics.
 
     """
@@ -115,7 +115,7 @@ class MFPixelCalculatorMarchingSquare:
         elif mode == "corner":
             self.offset = 0
         else:
-            raise ValueError(f'unknown mode: {mode}')
+            raise ValueError(f"unknown mode: {mode}")
         self.eps = eps
 
 
@@ -142,9 +142,9 @@ class MFPixelCalculatorMarchingSquare:
         ], dtype=int)[:,::-1]
 
     def calc_mfs(
-            self, 
-            coords=None, r=None, 
-            img=None, 
+            self,
+            coords=None, r=None,
+            img=None,
     ):
         """
         Compute MFs given points dilated by a square with half-width r.
@@ -161,7 +161,7 @@ class MFPixelCalculatorMarchingSquare:
         Returns
         -------
         np.array with shape (3,) or (r.shape, 3)
-            array of Minkowski functionals given r. 
+            array of Minkowski functionals given r.
             The last index k is labeling $k$-th Minkiwski functionals
                k=0: Euler characteristic
                k=1: Boundary length
@@ -209,13 +209,11 @@ class MFPixelCalculatorMarchingSquare:
 
     def calc_mfs_from_img(self, img):
         subimage_binary_encoding = scipy.signal.convolve(
-            img, 
+            img,
             self.filter_binary
         )
         img_mfs_local = self.lookup_mf_local[subimage_binary_encoding]
         arr_mfs = img_mfs_local.sum(axis=-2).sum(axis=-2) // 4
         arr_mfs = arr_mfs * np.array([1., self.bin_width, self.bin_width**2])# count bin width
         return arr_mfs
-        
-        
-        
+

@@ -72,7 +72,7 @@ class MFManhattanCalculator:
 
         """
         list_dilated_points  = [
-            shapely.geometry.Point(*coord).buffer(r, cap_style='square', join_style="mitre", mitre_limit=math.inf)
+            shapely.geometry.Point(*coord).buffer(r, cap_style="square", join_style="mitre", mitre_limit=math.inf)
             for coord in coords
         ]
         geom_dilated_points = shapely.ops.unary_union(list_dilated_points)

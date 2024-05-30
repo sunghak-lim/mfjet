@@ -1,4 +1,4 @@
-"""
+""" A module containing MF calculators for Euclidean geometry
 
 """
 
@@ -86,7 +86,13 @@ class MFEuclideanCalculator:
 
         """
         list_dilated_points  = [
-            shapely.geometry.Point(*coord).buffer(r, cap_style='round', quad_segs=self.quad_segs if quad_segs is None else quad_segs)
+            shapely.geometry.Point(
+                *coord
+            ).buffer(
+                r,
+                cap_style='round',
+                quad_segs=self.quad_segs if quad_segs is None else quad_segs
+            )
             for coord in coords
         ]
         geom_dilated_points = shapely.ops.unary_union(list_dilated_points)
