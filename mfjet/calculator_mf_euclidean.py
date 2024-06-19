@@ -44,9 +44,9 @@ class MFEuclideanCalculator:
         np.array with shape (3,) or (r.shape, 3)
             array of Minkowski functionals given r. 
             The last index k is labeling $k$-th Minkiwski functionals
-               k=0: Euler characteristic
-               k=1: Boundary length
-               k=2: Area
+                - k=0: Euler characteristic
+                - k=1: Boundary length
+                - k=2: Area
 
         """
         if np.ndim(r) == 0:

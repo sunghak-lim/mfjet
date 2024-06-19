@@ -18,7 +18,7 @@
     Phys. Rev. D 105, 014004, arXiv:2010.13469
  * [Jet Classification Using High-Level Features from Anatomy of Top Jets](https://arxiv.org/abs/2312.11760), <br />
     Amon Furuichi, Sung Hak Lim, and Mihoko M. Nojiri, <br />
-    arXiv:2312.11760
+    Accepted for publication in JHEP, arXiv:2312.11760
 
 Installation
 ------------
