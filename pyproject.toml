@@ -24,6 +24,13 @@ license = {file = "LICENSE.md"}
 
 dynamic = ["version"]
 
+[project.urls]
+Homepage = "https://github.com/sunghak-lim/mfjet"
+Documentation = "https://mfjet.readthedocs.io"
+Repository = "https://github.com/sunghak-lim/mfjet.git"
+Issues = "https://github.com/sunghak-lim/mfjet/issues"
+Changelog = "https://github.com/sunghak-lim/mfjet"
+
 [tool.setuptools.packages.find]
 include = ["mfjet"]
 exclude = ["docs", "tests", "examples"]
